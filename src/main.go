@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"os"
 )
 
 func main() {
@@ -11,5 +10,5 @@ func main() {
 		fmt.Fprintln(w, "Hello World Test App")
 	})
 
-	http.ListenAndServeTLS(":5000", os.Getenv("SSL_CERT"), os.Getenv("SSL_KEY"), nil)
+	http.ListenAndServe(":5000", nil)
 }
